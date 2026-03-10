@@ -5,15 +5,14 @@ function App() {
   const [starData, setStarData] = useState(null);
   const canvasRef = useRef(null);
 
-  // 1. Fetch the data from Python
+
   useEffect(() => {
-    fetch('https://star-backend-zzxu.onrender.com')
+    fetch('https://star-backend-zzxu.onrender.com') // engine url
       .then(res => res.json())
       .then(data => setStarData(data.stars))
       .catch(err => console.error("Connection failed:", err));
   }, []);
 
-  // 2. The Live Animation Loop
   useEffect(() => {
     if (!starData || !canvasRef.current) return;
 
