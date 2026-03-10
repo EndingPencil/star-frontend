@@ -7,7 +7,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch('https://star-backend-zzxu.onrender.com') // engine url
+    fetch('https://star-backend-zzxu.onrender.com/visible-stars') // engine url
       .then(res => res.json())
       .then(data => setStarData(data.stars))
       .catch(err => console.error("Connection failed:", err));
